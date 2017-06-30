@@ -7,13 +7,13 @@ package cpio
 import (
 	"fmt"
 	"io"
-	"log"
+
+	"github.com/u-root/u-root/pkg/log"
 )
 
 var (
 	formatMap = make(map[string]RecordFormat)
 	formats   []string
-	Debug     = func(string, ...interface{}) {}
 )
 
 func AddFormat(name string, f RecordFormat) {
