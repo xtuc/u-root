@@ -47,6 +47,8 @@ func (c *Client) Request(mac *net.HardwareAddr) (*dhcp6.Packet, error) {
 		return nil, fmt.Errorf("Request Error:\nnew solicit packet: %v\nerr: %v", solicitPacket, err)
 	}
 
+	fmt.Printf("solicitation packet: %v\n", solicitPacket)
+
 	if err = c.SendSolicitPacket(solicitPacket, mac); err != nil {
 		return nil, fmt.Errorf("Request Error:\nsend solicit packet: %v\nerr: %v", solicitPacket, err)
 	}
